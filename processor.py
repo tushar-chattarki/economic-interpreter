@@ -62,8 +62,7 @@ def create_news_vector_store():
     for doc in documents:
         doc.metadata['year'] = int(doc.metadata['Year'])
         doc.metadata['country_code'] = doc.metadata['ActionGeo_CountryCode']
-        # Remove raw dataframe columns from metadata to save space if desired, 
-        # but keeping them is fine for context.
+        # Remove raw dataframe columns from metadata to save space.
 
     print(f"Created {len(documents)} documents. Initializing Vector Store...")
 
@@ -71,7 +70,6 @@ def create_news_vector_store():
     embeddings = GoogleGenerativeAIEmbeddings(model="models/gemini-embedding-001")
 
     # Create/Update ChromaDB
-    # We use a persistent directory so we don't re-compute embeddings every run
     vectorstore = Chroma.from_documents(
         documents=documents,
         embedding=embeddings,
