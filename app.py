@@ -109,4 +109,4 @@ if not row.empty:
             except Exception as e:
                 st.error(f"Analysis failed: {e}")
                 if "RESOURCE_EXHAUSTED" in str(e):
-                    st.warning("⚠️ The AI model is currently rate-limited. Please try again in a minute.")
+                    st.warning("⚠️ The model is currently rate-limited. Please try again in a few minutes.")
