@@ -2,7 +2,7 @@ import pandas as pd
 import glob
 import os
 
-# GDELT Event 1.0 Headers
+# GDELT Event Headers
 HEADERS = [
     "GlobalEventID", "Day", "MonthYear", "Year", "FractionDate",
     "Actor1Code", "Actor1Name", "Actor1CountryCode", "Actor1KnownGroupCode", "Actor1EthnicCode", 
